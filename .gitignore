@@ -1,0 +1,4 @@
+# Ignore local editor/system files
+.vscode/
+.DS_Store
+Thumbs.db
