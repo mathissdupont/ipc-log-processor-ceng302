@@ -35,6 +35,18 @@ Kural: Herkes yalnizca kendi feature branch'inde calisir.
 - PR aciklamasinda test adimlari yazilmalidir.
 - Dogrudan `main` branch'ine push yapilmaz.
 
+## CI/CD Kurallari
+
+- PR acildiginda otomatik kontrol calisir (`.github/workflows/pr-ci.yml`).
+- Branch adi yalnizca su formatlarda olmali:
+	- `feature/pipe`
+	- `feature/shm`
+	- `feature/test-report`
+- Zorunlu dosyalardan biri eksikse PR kontrolu fail olur.
+- Kaynak dosyalar placeholder ise derleme/test adimi skip edilir.
+- Implementasyon tamamlandiginda ayni CI akisi otomatik derleme/test yapar.
+- `main` branch'e merge sonrasi `main-ci` yeniden dogrulama yapar.
+
 ## Script Uyumlulugu
 
 `scripts/test_script.sh` degistirilmez.

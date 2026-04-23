@@ -106,6 +106,26 @@ Ornek push komutlari:
 - En az 1 kisi tarafindan gozden gecirme yapilsin.
 - Mergedikten sonra herkes kendi branch'ine tekrar `main` guncelini alsin.
 
+## CI/CD Otomasyonu
+
+Bu repoda PR ve merge surecini otomatiklestiren GitHub Actions tanimlari vardir:
+
+- `.github/workflows/pr-ci.yml`
+	- PR acildiginda branch adini dogrular
+	- Zorunlu dosyalarin varligini kontrol eder
+	- Placeholder kaynak dosya varsa derleme/test adimini skip eder
+	- Gercek implementasyon varsa `scripts/test_script.sh` calistirir
+
+- `.github/workflows/main-ci.yml`
+	- `main` branch'e push sonrasi sozlesme kontrolu yapar
+	- Kaynaklar placeholder degilse test scriptini calistirir
+
+- `.github/workflows/pr-labeler.yml` + `.github/labeler.yml`
+	- Degisen dosyalara gore PR'e otomatik label ekler (`pipe`, `shm`, `test-report`, `documentation`)
+
+- `.github/pull_request_template.md`
+	- Her PR icin standart aciklama/checklist sunar
+
 ## Beklenen Kaynak Dosyalari
 
 Asagidaki dosyalar proje tesliminde beklenmektedir:
