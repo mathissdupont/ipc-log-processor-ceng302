@@ -1,0 +1,25 @@
+pipe:
+  - changed-files:
+      - any-glob-to-any-file:
+          - myData_pipe.c
+          - myMore_pipe.c
+
+shm:
+  - changed-files:
+      - any-glob-to-any-file:
+          - myData_shm.c
+          - myMore_shm.c
+
+test-report:
+  - changed-files:
+      - any-glob-to-any-file:
+          - test/test-report/**
+          - scripts/test_script.sh
+          - test/data/**
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - README.md
+          - CONTRIBUTING.md
+          - docs/**
